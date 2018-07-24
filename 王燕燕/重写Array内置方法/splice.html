@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>splice</title>
+</head>
+<body>
+<script>
+
+    //splice: 1，删除：索引m处删除n个，如果是一个参数：索引m处删除到末尾，原数组改变
+    //        2，修改：三个参数，第三个参数替换删除项
+    //        3，新增：第二个参数为0 ，把第三个及以后的参数添加到第一个参数（索引）的前面
+    Array.prototype.mySplice=function () {
+
+        var arg = arguments,
+            that=[],
+            len = arg.length,
+            lens=this.length,
+            o = arg[0],
+            newary = [],
+            left = [],
+            right = [],
+            k = o + arg[1];
+        console.log(arg);
+
+        function grouping(start,termination,group,point) {
+
+                for (var i = start; i <=termination-1; i++) {
+
+                    group.push(point[i]);
+                }
+                return group;
+            }
+        grouping(0,lens, that, this);
+        grouping(0,o, left, that);
+        newary=grouping(2,len, left, arg).concat(grouping(k,lens, right, that));
+
+        for (var i = 0; i < newary.length; i++) {
+            var cur = newary[i];
+            this[i]=cur;
+        }
+     //计算删除的项和替换的项的个数是否一致，不一致就减去原数组尾多余的项
+        if(len-2<arg[1]){
+            var c=arg[1]-(len-2);
+            for (var g = 0; g < c; g++) {
+
+                this.length--;
+            }
+        }
+
+
+    };
+
+
+    var ary=[1,2,3,4,5,6];
+    ary.mySplice(0,2,9,8,7);
+   console.log(ary);
+
+
+   //bug:当时一个参数，并且参数不为0的时候，不管是参数是几都返回整个原数组
+  /*  var ary1=[2,3,5,6,7];
+    ary1.splice(2,1);
+    console.log(ary1);*/
+
+
+</script>
+</body>
+</html>

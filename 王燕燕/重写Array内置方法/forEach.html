@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forEach</title>
+</head>
+<body>
+<script>
+    //forEach:遍历数组，2个参数，（回调函数{必传}，this指向），回调中2个参数，（当前项，当前索引），没有return，原数组不变
+
+    Array.prototype.myForEach=function (callback,ownThis) {
+
+
+        for (var i = 0; i < this.length; i++) {
+           var cur = this[i];
+
+           ownThis? callback.call(ownThis,cur,i):callback(cur,i);
+
+        }
+
+    }
+
+    var ary=[{a:3},{a:3},{a:0}];
+    var obj={ a:5};
+    var a=90;
+
+    ary.myForEach(function (item,index) {
+        console.log(item, index);
+        console.log(this.a);
+    },obj);
+
+    var ary2=[2,5,79];
+    function fn(){};
+    ary2.myForEach(function (item,index) {
+        console.log(item, index);
+        console.log(this);
+    },fn);
+
+
+
+</script>
+</body>
+</html>

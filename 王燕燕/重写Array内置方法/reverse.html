@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reverse</title>
+</head>
+<body>
+<script>
+    //reverse,将数组倒序，返回倒序后的数组，原数组改变
+    Array.prototype.myReverse=function myReverse() {
+
+           var ary=this,
+               nary=[],
+               j=0,
+               len=ary.length-1;
+
+        for (var i = len; i >= 0; i--) {
+            var cur = ary[i];
+            nary[j]=cur;
+            j++;
+            }
+
+        for (var k = 0; k <nary.length; k++) {
+            console.log(nary[k]);
+            this[k]=nary[k];
+
+        }
+
+            return this;
+
+    }
+    var ary=[[7,8,9],[3,1],[8,70],[[1],2,3]];
+    console.log(ary.myReverse());
+    console.log(ary);
+    var ary1=[[7,8,9],[3,1],[8,70],[[1],2,3]];
+    console.log(ary1.reverse());
+    console.log(ary1);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//indecOf:返回数组项第一次在数组出现的索引，成功返回第一次索引，失败返回-1，参数是要查找的数组项，原数组不变
+    Array.prototype.myIndexOf=function (str){
+
+        var ary=this;
+        for (var i = 0; i < ary.length; i++) {
+            var cur = ary[i];
+            if(str===cur){
+                return i;
+            }
+        }
+
+        return -1;
+
+    }
+
+    var ary=[2,7,4,6,9,7,7];
+    console.log(ary.myIndexOf(7));
+
+
+</script>
+</body>
+</html>

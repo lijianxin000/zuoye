@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+
+</head>
+<body>
+<script>
+    //sort：1、如果是同位数组,不传参，按照从小到大排序，
+    //      2、参数是回调函数，返回排好序的数组，原数组改变
+
+    //mySort如果是不传参数，就按照从小到大排序，不会按照字母排序
+    //      参数是函数，按照指定的方式排序，原数组改变
+    Array.prototype.mySort=function (callback) {
+
+        var s=0,s1=null;
+        if(callback&&toString.call(callback==='[object Function]')) {
+          s=1;
+        }
+            for (var i = 0; i < this.length; i++) {
+                var flg=true;
+                for (var j = 0; j < this.length-i-1; j++) {
+                    var cur = this[j];
+                    if(s===1) {
+                        s1 = callback(this[j], this[j + 1]);
+                    }else {
+                        s1=this[j]-this[j+1];
+                    }
+
+                    if(s1>0){
+                        this[j]=this[j+1];
+                        this[j+1]=cur;
+                        flg=false;
+                    }
+                }
+                if(flg){
+                    break;
+                }
+
+            }
+            s1=null;
+            return this;
+        };
+
+
+    var ary7=[{name:23,age:90},{name:3,age:0},{name:83},{name:23}];
+
+    console.log(ary7.mySort(function (a,b) {
+        return a.name-b.name;
+    }));
+
+/*   var ary4=[102,134,60,100,509,209];
+
+   ary4.mySort(function (a,b) {
+        console.log(a,b);
+        return a-b;
+    });
+    console.log(ary4);
+
+    var ary5=[9,56,78,35,675,34,5635];
+
+    ary5.mySort(function (a,b) {
+        return b-a;
+    })
+    console.log(ary5);
+
+    var ary7=[{name:23,age:90},{name:3,age:0},{name:83},{name:23}];
+
+    console.log(ary7.mySort(function (a,b) {
+        return b.name-a.name;
+    }));
+
+    var ary8=[3,67,2,765,888,0];
+
+    var ary9=[3,-3,9,-1];
+
+    ary8.mySort(function (a,b) {
+        return ary9;
+    })
+
+    console.log(ary8);*/
+
+
+</script>
+</body>
+</html>

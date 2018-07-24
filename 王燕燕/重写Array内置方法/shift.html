@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shift</title>
+</head>
+<body>
+<script>
+    //shift：删除数组中的第一项，没有参数，返回删除的项，原数组改变
+    Array.prototype.myShift=function(){
+         var o=this[0],
+             ary=this,
+             ary1=[];
+
+        for (var i = 1; i < this.length-1; i++) {
+            var cur = ary[i];
+             ary1.push(cur);
+             this[i]=this[i+1];
+             this.length--;
+
+        }
+        for (var j = 0; j < ary1.length; j++) {
+            var cur1 = ary1[j];
+            this[j]=cur1;
+        }
+        this.length--;
+
+        return o;
+    }
+    var ary=[3,5,4,6,1];
+
+    console.log(ary.myShift());
+    console.log(ary);
+
+    //空数组返回undefined
+    Array.prototype.myShift2=function () {
+
+        if(this.length<=0){
+            return undefined;
+        }
+        var o=this[0];
+        for (var i = 0; i < this.length-1; i++) {
+            this[i]=this[i+1];
+          }
+       this.length--;
+
+        return o;
+
+    }
+
+    var ary2=[4,5,6,7];
+
+    console.log(ary2.myShift2());
+    console.log(ary2);
+
+
+</script>
+</body>
+</html>

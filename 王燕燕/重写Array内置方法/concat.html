@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>concat</title>
+</head>
+<body>
+<script>
+    //concat:拼接多个数组成一个数组，参数可以是任意类型，原数组不变
+
+    Array.prototype.myConcat=function () {
+
+          var arg=arguments;
+          var newAry=[];
+        for (var k = 0; k < this.length; k++) {
+            var cur2 = this[k];
+            newAry.push(cur2);
+        }
+        for (var i = 0; i < arg.length; i++) {
+            var cur = arg[i];
+            if(toString.call(cur)==='[object Array]'){
+                for (var j = 0; j < cur.length; j++) {
+                    var cur1 = cur[j];
+                    newAry.push(cur1);
+                }
+                continue;
+            }
+            newAry.push(cur);
+        }
+        return newAry;
+    }
+
+    var ary=[1,2,5,6];
+    var s='ar,fsdf';
+    var c=12.4;
+    var f=[4,8,9];
+    var obj={a:1,v:4};
+    var p=[9,8,7,0];
+
+    console.log(ary.concat(s,c,f,obj,p));
+    console.log(ary.myConcat(s, c, f, obj,p));
+
+</script>
+</body>
+</html>
