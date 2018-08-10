@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<!--导航-->
+<div class="nav">
+	
+	  <!--导航上的头像图标和鼠标经过的弹出层在一个div里面-->
+	 <div class='wahover'>
+			<a id="loginUser" >
+				
+					<img src="./imgw/avatar.png" class='loginUser'/>
+				
+			</a>
+			<!--鼠标经过头像弹出层-->
+			<div id="toLogin" class="wtoLogin">
+		
+		    <i class="wborder">
+		        <i class="wbow"></i>
+		    </i>
+		
+		    <div class="wLtop">
+		        <div class="wLtopt">
+		              <span class='wlogin-span'>QQ账号：欣欣向荣</span>
+		              <a>切换</a>
+		              <a>退出</a>
+		        </div>
+		        <div class="wLtopb">
+		             <span>开通VIP/超级影视VIP 看大片</span>
+		             <button class="wbtn">开通</button>
+		        </div>
+		    </div>
+		    <div class="wicon">
+		        <a class="wv">
+		            <i></i>
+		            <span>V币好礼</span>
+		        </a>
+		        <a class="wt">
+		            <i></i>
+		            <span>云同步观看记录</span>
+		        </a>
+		        <a class="wm">
+		            <i></i>
+		            <span>免费抽奖</span>
+		        </a>
+		        <a class="wp">
+		            <i></i>
+		            <span>用客户端看抢VIP</span>
+		        </a>
+		    </div>
+		    <div id="qqLoginBtn"  class="qqLoginBtn"></div>
+	
+		</div>
+	</div>
+	
+</div>
+
+<!--登录后弹出层-->
+<div class='wPostlayer'>
+	<div class="wtvmp_content">	
+	    <div class='wlayer_top'>
+				  <span class='wuserimg'>
+					  <img src="./imgw/avatar.png" alt='头像' />
+					</span>
+					<dl class='wuseron'>
+						<dt>欣欣向荣 <a>切换至微信帐号</a><button><u></u>赠送好友</button>	<i class='wplaycolse'></i></dt>
+						<dd>微信与QQ账号不互通，当前开通的是QQ账号</dd>
+					</dl>
+				
+			</div>
+			<!--选项卡-->
+			<div class='wlayer_bottom'>
+	
+				<ul class='wBigtal'>
+					<li class="on"><i class='wbigli1'></i>腾讯视频VIP<span>(电脑、手机和Pad)</span></li>
+					<li><i class='wbigli2'></i>超级影视VIP<span>(<u>TV</u>、电脑、手机和Pad)</span></li>
+				</ul>
+				<div class='wBigbox'>
+					<!--大选项left-->
+					<div class='wbigLeft wshaow'  >
+						<!--left-->
+						<span class='wbtns wLeft'>
+								<i></i>
+							</span>
+							<!--right-->
+							<span class='wbtns wRight'>
+								<i></i>
+							</span>
+						<div class='wulbox'>
+								<ul class='wbigul'>
+										<li class='ons'><i>活动</i><dl><dd>VIP首月12元</dd><dt>点此开通</dt></dl></li>
+										<li class='action'><i>推荐</i><dl><dd>连续包月</dd><dt>(<u class='cf70f00'>15</u>元/月)</dt></dl></li>
+										<li><span>一个月20月</span></li>
+										<li><dl><dd>3个月58元</dd><dt>(<u class='cf70f00'>19.3</u>元/月)</dt></dl></li>
+										<li><dl><dd>12个月128元</dd><dt>(<u class='cf70f00'>16.5</u>元/月)</dt></dl></li>
+									</ul>
+						</div>
+                      
+						 <!--div可选内容-->
+						 <div class='wbigTat'>
+							  <!--获取优惠券-->
+							  <div class='wCoupon'>
+								  <o></o><label>使用优惠券：</label><span><input type="text" placeholder="无可用优惠券" readonly ></span>
+								  <a>点击领取优惠券</a>
+							  </div>
+							  <!--小选项卡-->
+							  <p class='wtxtkt'>开通方式</p>
+							  <div class='wsmalltat'>
+                                  <ul class='wsmallul'>
+									  <li class="wx onaction"><i></i>微信支付</li>
+									  <li class='qq'><i></i>QQ钱包</li>
+									  <li class="qqb"><i></i>Q币支付</li>
+									  <li class='sj'><i></i>手机话费</li>
+								  </ul>
+								  <div class='wsmallbox'>
+									  <!--wx-->
+									 <div class='wmall1 wmall   wsmall-sroll' style="display: none">
+										 <span class='wsroll wsroll1' style="display: none"></span>
+										<div class='zfimg'>
+												<img src='./imgw/qrencode1.png'/>
+												<p class='zftxt'>微信扫一扫支付</p>
+										</div>
+										<div class='wsmallcz w1'style='display: none;'>
+												<span>连续包月说明：</span>
+												<p>1、连续包月会员尊享 15元/月超低价(原价 20元/月)；</p>
+												<p>2、会员到期前1天为您自动续费，会员有效期延长31天；</p>
+												<p>3、您可随时取消连续包月服务，取消后不会再自动续费。</p>
+										</div>
+									 </div>
+									    <!--qq-->
+									 <div class='wmall2 wmall wsmall-sroll' style="display: none">
+											<span class='wsroll wsroll2'style="display: none"></span>
+											<div class='zfimg'>
+													<img src='./imgw/qrencode.png'/>
+													<p class='zftxt'>打开手机QQ扫码支付</p>
+											</div>
+											<div class='wsmallcz w2'style='display: none;'>
+													<span>连续包月说明：</span>
+													<p>1、连续包月会员尊享 15元/月超低价(原价 20元/月)；</p>
+													<p>2、会员到期前1天为您自动续费，会员有效期延长31天；</p>
+													<p>3、您可随时取消连续包月服务，取消后不会再自动续费。</p>
+											</div>
+									 </div>
+									   <!--qqb-->
+									   <div class='wmall3 wmall wsmall-sroll'style="display: none">
+											
+											<div class='wsmallcz'>
+													<span>应付金额：</span>
+													<p><i class='wmoney'>20</i> Q币（1Q币=10Q点）</p>
+													<p>Q币余额足够时，到期后自动续费</p>
+													<p class='yh'>（优惠：15Q币/月）</p>
+													<p><button>立即开通</button><a>查询余额</a></p>
+											</div>
+									  </div>
+									    <!--sj-->
+									  <div class='wmall4 wmall wsmall-sroll'style="display: none">
+											
+												<div class='wsmallcz'>
+														<span>手机号码：</span>
+														<p><input type="text" placeholder="请输入您的手机号码" autofocus/></p>
+														<p><button>下一步</button><i>手机话费支付金额以输入手机号码后的价格为准</i></p>
+												</div>
+									  </div>
+								 </div>
+							
+							  </div>
+						 </div>
+					</div>
+					<!--大选项right-->		
+					<div class='wbigRight' style="display: none">
+                      <div class='wRight_left'>
+						  <img src='./imgw/qrencode.png'/>
+                          <p class='wptxt'>微信或QQ扫一扫支付</p>
+					  </div>
+					  <div class='wRight_right'>
+                          <div class='wright_top'>
+								<p>微信或QQ扫码后手机选择套餐：</p>
+								连续包月<i>27</i>元<u>|</u>1个月<i>30</i>元<u>|</u>3个月<i>85</i>元<u>|</u>年费<i>330</i>元
+						  </div>
+						  <div class='wright_bottom'></div>
+					  </div>
+					  <p class='wright-bottom'>超级影视VIP说明：腾讯视频VIP升级版，享<a class='wright-a'>TV云视听极光</a>、手机、电脑、Pad四屏观影特权<a class='wright-more'>了解更多>></a></p>
+					</div>
+					<a class='wxyi'>《腾讯视频VIP服务协议》</a>
+				</div>
+			</div>
+				
+	</div>
+</div>
+
+<script src="./js/login.js"></script>
+
+</body>
+</html>

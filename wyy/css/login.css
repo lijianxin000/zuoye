@@ -1,0 +1,892 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+i{
+    font-style: normal;
+}
+button{
+    outline: 0;
+    border:0;
+    cursor: pointer;
+}
+a{
+    cursor: pointer;
+}
+body,html{
+    background: #eee;
+}
+.cf70f00{
+    color: #f70f00;
+    text-decoration: none;
+    
+
+}
+.nav{
+  background: #999;
+    height: 73px;
+    padding: 0 60px;
+}
+#loginUser{
+	
+    position: relative;
+		z-index: 2;
+   
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+		cursor: pointer;
+}
+#loginUser img{
+	
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+/*这里开始是登录框*/
+.wahover{
+	position: absolute;
+	top:10px;
+	right: 70px;
+	overflow: hidden;
+}
+
+.wtoLogin{
+ 
+  position: absolute;
+  top:55px;
+  right: 1px;
+    width: 396px;
+    background: #fff;
+    border-top:2px solid #ff920b;
+    font-size: 14px;
+    color: #202020;
+}
+.wtoLogin .wborder{
+    position: absolute;
+    display: block;
+    top:-18px;
+    right: 10px;
+    z-index: 11;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-bottom-color: #ff920b;
+}
+.wtoLogin .wbow{
+    position: relative;
+    display: block;
+    top: -3px;
+    left: -6px;
+    z-index: 2;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #fff;
+}
+.wtoLogin .wLtop{
+    position: relative;
+    height: 85px;
+    padding: 15px;
+    background: url("../imgw/pop_user_bg@2x.png") 0 0 no-repeat;
+    background-image: -webkit-image-set(url(../imgw/pop_user_bg@2x.png) 2x);
+}
+.wtoLogin .wLtop .wLtopt a{
+    float: right;
+    padding: 0 5px;
+    color: #999;
+    cursor: pointer;
+}
+.wtoLogin .wLtop .wLtopt a:hover{
+
+    color: #202020;
+}
+.wtoLogin .wLtop .wLtopb{
+   position: absolute;
+    bottom: 35px;
+    left: 15px;
+   right: 15px;
+}
+.wtoLogin .wLtop .wlogin-span{
+    position: relative;
+
+}
+.wtoLogin .wLtop .wlogin-span::after{
+    position: absolute;
+    top:-3px;
+    right: -30px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../imgw/icon_quick_vip.png);
+    background-size: cover;
+
+}
+
+.wtoLogin .wLtop .wLtopb .wbtn{
+    float: right;
+    height: 24px;
+    line-height: 22px;
+    min-width: 50px;
+    padding: 0 20px;
+    text-align: center;
+    color: #fff;
+    background: #e3b54c;
+    border-radius: 12px;
+    border:0;
+		outline: none;
+		cursor: pointer;
+}
+.wicon a{
+    float: left;
+    width: 25%;
+    text-align: center;
+    cursor: pointer;
+}
+.wicon{
+    overflow: hidden;
+}
+.wicon a i{
+   display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+   margin-bottom: 3px;
+
+}
+.wicon a.wv i{
+    background: url("../imgw/icon_feature_vb.svg")0 0 no-repeat; background-size:cover ;
+
+}
+.wicon a.wt i{
+    background: url("../imgw/icon_feature_cloud.svg")0 0 no-repeat; background-size:cover ;
+}
+.wicon a.wm i{
+    background: url("../imgw/icon_feature_lottery.svg")0 0 no-repeat; background-size:cover ;
+}
+.wicon a.wp i{
+    background: url("../imgw/icon_feature_client.svg")0 0 no-repeat; background-size:cover ;
+    
+}
+.wicon a span{
+
+ font-size:12px;
+}
+.wicon a:hover span{
+    color: #ff6428;
+}
+
+.qqLoginBtn{
+    clear: both;
+    width: 180px;
+    height: 30px;
+    margin:30px auto 45px auto;
+    border-radius: 30px;
+    background: #ff6428;
+		cursor: pointer;
+
+}
+.qqLoginBtn:before{
+    position: absolute;
+    left:170px;
+     content: '立即登录';
+    line-height: 30px;
+    color: #fff;
+}
+.qqLoginBtn a{
+	    display: block;
+    width: 100%;
+    height: 100%;
+}
+.qqLoginBtn img{
+	width: 100%;
+	height: 100%;
+ opacity: 0;
+}
+
+/*登录后弹出层*/
+.wPostlayer{
+    display: none;
+	position: fixed;
+	top:0;
+	left: 0;
+	right:0;
+	bottom: 0;
+	z-index: 2;
+	background: rgba(0,0,0,.5);
+}
+.wPostlayer .wtvmp_content{
+	
+	position: absolute;
+	top:10px;
+	left: 50%;
+	z-index: 3;
+	width: 750px;
+	height: 555px;
+	margin-left: -375px;
+	border-radius: 5px;
+	border:10px solid rgba(187,187,187,.9);
+	background: #fff;
+}
+
+.wlayer_top{
+	overflow: hidden;
+	background: #f1f1f1;
+	padding: 5px 10px 10px 30px;
+}
+.wuserimg{
+    position: relative;
+    top:6px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border:0;
+
+}
+.wuserimg:after{
+	position: absolute;
+	bottom: 5px;
+	right: -2px;
+	content: "";
+	width: 16px;
+	height: 16px;
+	background: url(../imgw/sprite_icon.png) no-repeat;
+	background-position:-30px -70px;
+}
+.wuserimg img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border:0;
+}
+.wuserimg{
+	float: left;
+}
+.wuseron{
+	
+	margin-left: 53px;
+	font-size: 14px;
+	color: #2a2a2a;
+}
+
+.wuseron dt a{
+	padding:0 30px 0 10px;
+	color: #666;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.wuseron dt button{
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+	border: 0;
+	outline: 0;
+	border-radius: 5px;
+	background: #f1f1f1;
+	cursor: pointer;
+}
+.wuseron dt button u{
+	position: relative;
+  top: 3px;
+  margin-right: 7px;
+	display: inline-block;
+	width:20px;
+	height: 20px;
+	
+	background: url(../imgw/sprite_icon.png) no-repeat;
+	background-position:0 0;
+	
+}
+.wuseron dt button:hover{
+	color: #fff;
+	background: #f70f00;
+}
+.wuseron dt button:hover u{
+	
+	background-position:-30px 0;
+
+}
+.wuseron dt .wplaycolse{
+    cursor: pointer;
+	float: right;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url(../imgw/sprite_icon.png)  no-repeat;
+	background-position:-270px -5px;
+}
+.wuseron dd{
+ font-size: 12px;
+}
+
+/*到这里了，大选项卡*/
+
+.wlayer_bottom{
+    position: relative;
+    padding: 0 35px;
+}
+/*两边的按钮*/
+.wbtns{
+
+    position: absolute;
+    width: 20px;
+    height: 77px;
+    top: 5px;
+  
+    border-radius: 5px;
+
+}
+.wbtns:hover{
+   background: #c7c7c7;
+
+}
+.wbtns i{
+    position: relative;
+    top:20px;
+    display: inline-block;
+    width: 16px;
+    height: 30px;
+    background:url(../imgw/minipay_icon.png) no-repeat;
+}
+.wLeft{
+    display: none;
+   left: -29px;
+}
+.wLeft i{
+    left: 1px;
+    background-position: 0 -78px;
+ }
+.wRight{
+    
+    right:-29px;
+}
+.wRight i{
+    left: 3px;
+    background-position:-20px -78px;
+}
+
+
+
+.wBigtal {
+    
+    overflow: hidden;
+    padding: 5px 0 25px 0;
+    cursor: pointer;
+}
+
+.wBigtal i{
+    position: relative;
+    top: 6px;
+    right: 5px;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background: url(../imgw/sprite_icon.png) no-repeat;
+}
+.wBigtal li i.wbigli1{
+   background-position: -120px -70px;
+}
+.wBigtal li i.wbigli2{
+    background-position: -180px -70px;
+ }
+ .wBigtal li.on i.wbigli1{
+    background-position: -90px -70px;
+ }
+ .wBigtal li.on i.wbigli2{
+     background-position: -148px -70px;
+  }
+
+.wBigtal li{
+
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10px;
+    float: left;
+    text-align: center;
+    border-bottom: 2px solid #f4f4f4;
+}
+.wBigtal li.on{
+
+    border-bottom: 2px solid #f70f00;
+}
+.wBigtal li span{
+    padding-left: 10px;
+    font-size: 12px;
+    color: #666;
+}
+.wBigtal li span u{
+  text-decoration: none;
+    font-size: 12px;
+    color: #f70f00;
+}
+
+/*大选项卡：左边选项卡wBigbox开始*/
+.wBigbox{
+
+}
+.wshaow {
+    position: relative;
+}
+.wshaow::after{
+    position: absolute;
+    right:0px;
+    top:12px;
+    content: '';
+    width: 15px;
+    height: 66px;
+    background: -webkit-linear-gradient(left, rgba(160,160,160,.0), rgba(160,160,160,.1),rgba(160,160,160,.1), rgba(160,160,160,.3));
+    background: linear-gradient(left, rgba(160,160,160,.0), rgba(160,160,160,.1),rgba(160,160,160,.1), rgba(160,160,160,.3)); 
+
+}
+.wBigbox .wbigLeft{
+    position: relative;
+  
+    cursor: pointer;
+}
+
+.wbigLeft .wbigul{
+    position: relative;
+    left: 0;
+    width: 2000px;
+    transition:left 0.4s ease;
+}
+
+.wbigLeft .wbigul li{
+    position: relative;
+    float: left;
+    width: 120px;
+    padding: 10px;
+    height: 44px;
+    border:2px solid #f5f5f5;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 15px;
+    justify-content: initial;
+    cursor: pointer;
+
+}
+
+.wbigLeft .wbigul li i{
+
+     position: absolute;
+     top: -12px;
+     right: -10px;
+    
+     width: 30px;
+     height: 18px;
+     background: #f70f00;
+     border-radius: 2px;
+     font-size: 12px;
+     color: #fff;
+}
+.wbigLeft .wbigul li.action{
+    position: relative;
+    border:2px solid #f70f00;
+}
+.wbigLeft .wbigul li.action::after{
+
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    content: '';
+    width: 27px;
+    height: 27px;
+    background: url(../imgw/sprite_icon.png)  no-repeat;
+	background-position:-300px -1px;
+
+}
+.wbigLeft .wbigul li:hover{
+
+    border:2px solid #f70f00;
+
+}
+.wbigul li.ons{
+    background: #fbefd9;
+    border:2px solid #fbefd9;
+}
+.wbigul li.ons:hover{
+
+  
+    border:2px solid #fbefd9;
+}
+ 
+.wbigLeft .wbigul li span{
+    
+    font-size: 18px;
+    color: #999;
+    line-height:44px; 
+
+}
+.wbigLeft .wbigul li dd{
+    
+    font-size: 18px;
+    color: #999;
+
+}
+.wbigLeft .wbigul li:hover dd, 
+.wbigLeft .wbigul li:hover span{
+    color: #2a2a2a;
+
+}
+
+.wbigLeft .wbigul li dt{
+    
+    font-size: 14px;
+    color: #999;
+    padding-top: 3px;
+
+}
+
+/*左边大选项卡的div可选择项*/
+.wbigTat{
+    overflow: hidden;
+    clear: both;
+    padding-top: 10px;
+}
+
+.wbigTat .wCoupon{
+    
+
+}
+.wbigTat .wCoupon o{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border:1px solid #999;
+}
+.wbigTat .wCoupon label{
+   padding: 0 10px;
+   font-size: 14px;
+}
+.wbigTat .wCoupon input{
+
+  
+    width: 331px;
+    height: 26px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    border:2px solid #f5f5f5;
+ }
+ .wbigTat .wCoupon span{
+    position: relative;
+ }
+ .wbigTat .wCoupon span:after{
+     position: absolute;
+     top:4px;
+     right: 10px;
+     content: '';
+     width: 20px;
+     height: 15px;
+     background: url(../imgw/sprite_icon.png) no-repeat;
+	 background-position:-243px -60px;
+
+ }
+ .wbigTat .wCoupon  input::-webkit-input-placeholder{
+     color: #a0a0a0;       
+     font-size: 14px;
+ }
+ .wbigTat .wCoupon a{
+   margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+  border-bottom: 1px solid #a0a0a0;
+  cursor: pointer;
+}
+/*左边大选项卡的div可选择项的内部选项卡*/
+.wtxtkt{
+    font-size: 14px;
+}
+.wbigTat .wsmalltat{
+    
+}
+.wulbox{
+   overflow: hidden;
+   padding: 10px 0;
+}
+.wsmallul{
+     float: left;
+     width: 138px;
+     border-radius: 5px;
+     border: 2px solid #f5f5f5;
+     border-bottom-right-radius: 0;
+     border-top-right-radius: 0;
+}
+.wsmallul li{
+  height: 58px;
+  line-height: 58px;
+  font-size: 14px;
+  text-align: center;
+  background: #eee;
+  margin-right: -4px;
+    
+}
+.wsmallul li.onaction{
+    background: #fff;
+  
+}
+.wsmallul li i{
+    position: relative;
+    display: inline-block;
+    top: 7px;
+    width: 25px;
+    height: 26px;
+    margin-right: 5px;
+    background: url(../imgw/sprite_icon.png) no-repeat;
+}
+.wsmallul li.wx i{
+   
+    background-position: -28px -37px;
+}
+.wsmallul li.qq i{
+ 
+    background-position: -0px -37px;
+}
+.wsmallul li.qqb i{
+   
+    background-position: -298px -63px;
+}
+.wsmallul li.sj i{
+    top: 10px;
+    width: 27px;
+    height: 42px;
+    background-position: -208px -27px;
+}
+.wsmallbox{
+  overflow: hidden;
+   margin-left: 140px;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    height: 231px;
+    border: 2px solid #f5f5f5;
+  
+}
+.wsmallbox img{
+    width: 130px;
+     border:1px solid #f5f5f5;
+     padding: 5px;
+}
+.wsmallbox .zfimg{
+  margin-top:10px;
+    text-align: center;
+}
+.wsmall-sroll{
+  position: relative;
+}
+
+
+/*滚动条*/
+.wsroll{
+    position: absolute;
+    top:-10px;
+    right: 0;
+    width: 7px;
+    height: 200px;
+    background: #ddd;
+    border-radius:5px;
+}
+
+
+.wsmallcz{
+    position: relative;
+   margin-left: 120px;
+   padding:10px 0 30px 0;
+}
+.wsmallcz p,.wsmallcz span{
+  font-size: 12px;
+  color: #666;
+  line-height: 21px;
+}
+.wsmallcz span{
+   position: absolute;
+   left: -90px;
+   top: 11px;
+}
+
+.zftxt{
+   margin: 1px auto;
+
+   width: 140px;
+   height: 28px;
+   line-height: 28px;
+   color: #666;
+   font-size: 12px;
+   background: #f3f3f3;
+}
+.wxyi{
+    position: fixed;
+    bottom: 65px;
+    right: 45px;
+    float: right;
+    font-size: 12px;
+    line-height: 26px;
+    color: #999;
+}
+
+/*qqb*/
+.wmall3{
+  overflow: hidden;
+}
+.wmall3 .wsmallcz span,.wmall4 .wsmallcz span{
+    left: -60px;
+    top: 10px;
+}
+.wmall3 .wsmallcz span{
+    left: -60px;
+    top: 14px;
+}
+.wmall3 .wsmallcz p i{
+  
+   font-size: 20px;
+   color: #f70f00;
+}
+.wmall3 .wsmallcz p{
+    color: #2a2a2a;
+    line-height: 22px;
+}
+.wmall3 .wsmallcz p.yh{
+    color: #999;
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 5px;
+}
+.wmall3 .wsmallcz p button{
+    width: 68px;
+    background: #f70f00;
+    font-size: 12px;
+    line-height: 27px;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
+  
+}
+
+.wmall3 .wsmallcz p a{
+    font-size: 12px;
+    line-height: 27px;
+    color: #2d7de6;
+    text-decoration: underline;
+}
+/*sj*/
+.wmall4 .wsmallcz span{
+    left: -60px;
+    top: 12px;
+}
+.wmall4 .wsmallcz p input{
+   width: 252px;
+   padding: 5px 2px;
+   margin-bottom: 10px;
+   border:1px solid #cdcdcc;
+   outline: 0;
+}
+.wmall4 .wsmallcz p input::-webkit-input-placeholder{
+    color: #999;       
+    font-size: 12px;
+}
+.wmall4 .wsmallcz p i{
+    font-size: 12px;
+    line-height: 20px;
+    color: #ff7800;
+}
+
+.wmall4 .wsmallcz p button{
+    width: 68px;
+    margin-right: 10px;
+    background: #cdcdcc;
+    font-size: 12px;
+    line-height: 27px;
+    color: #fff;
+    text-align: center;
+}
+
+/**右边选项卡**/
+.wbigRight{
+    padding: 35px 48px 0 48px;
+}
+.wRight_left{
+  float: left;
+}
+.wRight_left img{
+   
+    padding: 5px;
+    width: 160px;
+    border:1px solid #eee;
+  }
+.wRight_left .wptxt {
+    width: 170px;
+    color: #666;
+    font-size: 12px;
+    background: #f3f3f3;
+    text-align: center;
+    line-height: 27px;
+    margin-top: 10px;
+}
+.wRight_right{
+   
+ }
+ .wright-bottom{
+   clear: both;
+   font-size: 12px;
+   color: #2a2a2a;
+   text-indent: 10px;
+   line-height: 20px;
+   padding-top: 38px;
+ }
+ .wright-bottom .wright-a{
+     
+    color: #e1b355;
+    border-bottom: 1px solid #e1b355;
+ }
+ .wright-bottom .wright-more{
+    padding-left: 6px;
+    color: #666;
+}
+.wRight_right{
+    float: right;
+}
+.wright_top{
+
+    width: 380px;
+    height: 76px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    background: #fdf5e5;
+    border-radius: 5px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #4b2e2e;
+    padding-right: 2px;
+}
+.wright_top p{
+     
+  font-weight: bold;
+}
+.wright_top i{
+     
+    color: #f70f00;
+   font-size: 16px;
+
+  }
+  .wright_top u{
+     display: inline-block;
+     padding: 0 5px;
+  font-size: 16px;
+  color: #e4dac5;
+  transform: scale(.5);
+    
+}
+
+.wright_bottom{
+    width: 375px;
+    height: 80px;
+    margin-top: 40px;
+    background: url(../imgw/adver.png) no-repeat;
+    background-size: cover;
+}
